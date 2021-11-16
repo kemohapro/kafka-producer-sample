@@ -1,5 +1,6 @@
 package com.kemoha.producer;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -89,7 +90,10 @@ public class LibraryEventProducer {
 	
 	private ProducerRecord<Integer,String> producerRecord(Integer key, String value, String kafkaTopic2) {
 		
-		List<Header> header = List.of(new RecordHeader("event-source", "scanner".getBytes()));
+		List<Header> header = new ArrayList<Header>();
+				
+				
+		header.add(new RecordHeader("event-source", "scanner".getBytes()));
 		
 		return new ProducerRecord<Integer,String>(kafkaTopic2,null,key,value,header);
 	}

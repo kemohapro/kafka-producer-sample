@@ -14,7 +14,7 @@
 	<name>library-events-producers</name>
 	<description>Kafka Producer </description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
